@@ -1,0 +1,14 @@
+<div id="album">
+  <h1><%= @album_name %></h1>
+
+  <% @photos.each do |photo| %>
+    <img src="/files/<%= photo %>" />
+    <!-- <h3><%= photo %></h3> -->
+    <p><a href= "/<%= @album_name %>/<%= photo %>"><%= remove_ext(photo) %></a>
+       <a href= "/<%= @album_name %>/<%= photo %>/edit">Edit Photo</a>
+    </p>
+  <% end %>
+  <p><a href= "/<%= @album_name %>/upload">Upload a photo</a></p>
+
+  <p><a href= "/<%= @album_name %>/rename">Rename Album</a></p>
+</div>

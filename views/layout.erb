@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Photo Album</title>
+    <link href="/stylesheets/photo_album.css" rel="stylesheet" type="text/css" >
+  </head>
+  <body>
+    <div class="header">
+      <h1>Photo Album</h1>
+    </div>
+    <% if session[:message] %>
+      <p class="message"><%= session.delete(:message) %></p>
+    <% end %>
+    <%= yield %>
+    <p><a href="/">Album Index</a></p>
+  </body>
+</html>

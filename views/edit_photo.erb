@@ -1,0 +1,10 @@
+<h2>Editing <%= @filename %></h2> 
+  <form class="delete" action="/<%= @album_name %>/<%= @filename %>/delete" method="post">
+    <button type="submit" class="delete">Delete Photo</button>
+  </form>
+<form action="/<%= @album_name %>/<%= @filename %>/rename" method='POST'>
+  <label for = "new_filename">Enter a new name for your photo:</label>
+  <input name="new_filename" type="text" value="<%= params[:new_filename] || @filename %>">
+  <button type="submit">Submit</button>
+  <a href="/<%= @album_name %>">Cancel</a>
+</form>

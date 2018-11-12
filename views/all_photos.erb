@@ -1,0 +1,7 @@
+  <h2>All Photos</h2>
+  <% if @files %>
+    <% @files.each do |filename| %>
+      <img src ="/files/<%= filename %>" />
+      <p><a href= "/photo/<%= filename %>"><%= remove_ext(filename) %></a></p>
+    <% end %>
+  <% end %>

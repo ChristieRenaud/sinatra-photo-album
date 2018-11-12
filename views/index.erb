@@ -1,0 +1,28 @@
+<div>
+  <h1>Your Albums</h1>
+    <% if @albums %>
+      <% @albums.each do |album| %>
+        <div>
+          <a href= "/<%= album[:name] %>"><%= album[:name] %></a><br />
+          <form action="/<%= album[:name] %>/destroy" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+          <% if !album[:photos].empty? %>
+            <img src="/files/<%= find_cover(album[:name]) %>">
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+
+  <% if session[:album_name_error] %>
+    <p class="message"><%= session.delete(:album_name_error) %></p>
+  <% end %>
+  <h3>Create a new album</h3>
+  <form action="/albums" method="post">
+    <label for = "album_name">Enter a name for your new album:</label></ br>
+    <input name="album_name" placeholder="Album Name" type="text" value="">
+    <button type="submit">Submit</button>
+  </form>  
+  <h3><a href="/photos">View all photos</a></h3>
+  
+</div>

@@ -1,0 +1,18 @@
+body {
+  padding: 1em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+img {
+  width: 400px;
+  border: 1px;
+}
+
+img.large {
+  width: 600px;
+  border: 1px;
+}
+
+.inline {
+  display: inline;
+}
